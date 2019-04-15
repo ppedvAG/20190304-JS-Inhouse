@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>START</title>
+  </head>
+  <body onload="checkCookie()">
+      <div id="anmeldeContainer">
+      <form id="logForm" action="">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="name"
+          onchange="checkLogInputs();"        
+        />
+        <input
+          type="password"
+          id="userPwd"
+          placeholder="password"
+          onchange="checkLogInputs();"        
+        />
+        <button id="logbtn" type="button" onclick="greetUser(userInput.value)">
+          Login
+        </button>
+        <!-- oninput="enableBtn();" -->
+      </form>
+
+      <button onclick="javascript:location.href='anmeldeform.html'">
+        SignIn
+      </button>
+      <p id="greetOutput"></p>
+    </div>
+
+    <header>
+      <h1>Willkommen bei unserem Food-Lieferservice</h1>
+    </header>
+
+    <div id="angebotContainer">
+      <h4>HEUTE IM ANGEBOT</h4>
+      <p id="angebotOffer"></p>
+    </div>
+
+    <nav>Navigation mit Verlinkung auf Unterseiten</nav>
+
+    <aside id="asideLeft">
+      <form id="offerForm" action="#"></form>
+    </aside>
+    <section>
+      <article>
+        <div id="imgContainer">
+          <img src="images/food-1.jpg" alt="Ein Bild mit Essen" />
+        </div>
+      </article>
+    </section>
+
+    <aside id="asideRight">
+      <form name="clientForm" action="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+      </form>
+    </aside>
+
+    <footer>Footer mit Impressum, Kontakt</footer>
+
+    <div id="cookieConfirm">
+      <span>Diese Seite möchte Cookies verwenden</span>
+      <button onclick="hideCookieDiv()">OK</button>
+    </div>
+    <script src="scripts/cookies.js"></script>
+    <script src="scripts/kunde.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

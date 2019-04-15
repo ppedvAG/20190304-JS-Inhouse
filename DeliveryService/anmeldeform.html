@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Anmelden</title>
+    <style>
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Anmeldeformular</h1>
+    <p id="feedback">ich bin das anmeldeformular</p>
+    <form action="#">
+      <input id="fname" type="text" placeholder="your firstname" required />
+      <input id="lname" type="text" placeholder="your lastname" required />
+      <input type="text" placeholder="your client status" value="basic" />
+      <input
+        id="pwd"
+        type="password"
+        pattern="^(?=.*\d).{4,8}$"
+        placeholder="password"
+        required
+      />
+      <input
+        id="pwdconfirm"
+        type="password"
+        placeholder="password confirm"
+        required
+      />
+      <button type="submit">OK</button>
+    </form>
+
+    <script src="scripts/kunde.js"></script>
+    <script src="scripts/signin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Methoden binden</title>
+  </head>
+  <body>
+    <script>
+      this.x = 9;
+      var module1 = {
+        x: 81,
+        getX: function() {
+          return this.x;
+        }        
+        /* 
+        () => this.x
+        Mit der Arrow Function wird in diesem Beispiel überall 9 rauskommen.
+        Arrow Functions behandeln das Wort this anders
+         */
+      };
+      var module2 = {
+        x: 30,
+        y: "andereProperty"
+      };
+      var module3 = {
+        x: 50,
+        z: "irgendwas"
+      };
+      console.log("module.getX(): " + module1.getX()); //81
+      var methodFromModule1 = module1.getX;
+      var xFromOuterMethod = methodFromModule1();
+      console.log("xFromOuterMethod :" + xFromOuterMethod); //9      
+
+      /* Mit der Methode bind() kann man eine Funktionsvariable
+       an unterschiedliche Objekte anbinden, um deren Werte auszulesen */
+      var methodFromModule1Bounded = methodFromModule1.bind(module2);
+      var xFromModule2 = methodFromModule1Bounded();
+      console.log("xFromModule2: " + xFromModule2); //30
+
+      var methodFromModule1Bounded = methodFromModule1.bind(module3);
+      var xFromModule3 = methodFromModule1Bounded();
+      console.log("xFromModule3: " + xFromModule3); //50
+    </script>
+  </body>
+</html>

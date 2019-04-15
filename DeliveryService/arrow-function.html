@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Function</title>
+</head>
+<body>
+
+
+    <script>
+        var elements = [
+            "Kupfer",
+            "Eisen",
+            "Magnesium", //Bronze ist kein Element
+            "Aluminium"
+        ];
+        var results = [];
+
+        results = elements.map(function(element) {
+            return element.length;
+        });
+        console.log("1. "+ results);
+
+        results = elements.map((element) => {
+            return element.length;
+        });
+        console.log("2. "+ results);
+
+        /* Bei nur einem Parameter sind die runden Klammern optional */
+        results = elements.map(element => {
+            return element.length;
+        });
+        console.log("3. "+ results);
+
+        /* Wenn die Pfeilfunktion nur eine Anweisung hat und das ist eine return-Anweisung,
+         dann das Schlüsselwort return und die geschweiften Klammern sind optional */
+        results = elements.map(element => element.length);
+        console.log("4. "+ results);
+
+        /* Underscore als Parameter. Eher für TypeScript relevant, 
+        wo man die strikte Variablentypisierung umgehen möchte*/
+        results = elements.map(_ => _.length)
+        console.log("5. "+ results);
+
+        /* Destructuring. Von jedem Parameter wurde length abgefragt 
+        und der neuen Variable fooVar weitergegeben */
+        results = elements.map(({length: fooVar}) => fooVar);
+        console.log("6. "+ results);
+
+        /*Destructuring. Die neue Variable wurde weggelassen*/
+        results = elements.map(({length}) => length);
+        console.log("7. "+ results);
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>

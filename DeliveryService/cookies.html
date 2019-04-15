@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cookies Exmpl</title>
+</head>
+<body>
+
+    <script>
+       
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date(); //aktuelle Zeit übernehmen
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    /* getTime returns miliseconds from 01.01.1970*/
+    /* exdays wird in milisekunden überführt */
+    /* mit setTime wird das Verfalldatum berechnet */
+    var expires = "expires="+ d.toUTCString();
+    /* Die toUTCString() Methode konvertiert ein Date in einen String. 
+    Dabei wird die UTC Zeitzone (koordinierte Weltzeit) verwendet. */
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    /* Gets the unencoded version of an encoded component
+     of a Uniform Resource Identifier (URI). 
+     document.cookie is an encoded URI component*/
+     /* Decode the cookie string, to handle cookies with special characters, e.g. '$' */
+    var ca = decodedCookie.split(';');
+    /* gibt ein Array von Strings zurück. 
+    Die ursprüngliche Zeichenkette wurde in kleinere 
+    Strings an der Stelle ";" geteilt */
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') { _sdfadsf
+        c = c.substring(1); //c sieht an dieser stelle so aus: "cname=somevalue"
+        /* wenn das erste Zeichen ein Leerzeichen ist,
+        dann wird eine neue Zeichenkette ohne dieses Leerzeichen angelegt */
+      }
+      if (c.indexOf(name) == 0) { //afnameaaervac
+          /* indexOf gibt die Position zurück, ab der der gesuchte String gefunden wurde */
+        return c.substring(name.length, c.length);
+        /* somevalue wird an dieser Stelle zurückgegeben */
+      }
+    }
+    return "";
+    /* If the cookie is not found, return "" */
+  }
+
+
+  function checkCookie() {
+    var username = getCookie("username");
+    if (username != "") {
+     alert("Welcome again " + username);
+    } else {
+      username = prompt("Please enter your name:", "");
+      /* prompt(text, defaultText)
+       defaultText Optional. The default input text */
+      if (username != "" && username != null) {
+        setCookie("username", username, 365);
+      }
+    }
+  }
+
+  /* <body onload="checkCookie()"></body>
+   */
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Closures</title>
+  </head>
+  <body>
+    <div>
+      <p id="output"></p>
+      <button onclick="saySth()">Say Something</button>
+    </div>
+
+    <div>
+      <input id="fN" type="number" placeholder="firstNumber" />
+      <input id="sN" type="number" placeholder="secondNumber" />
+      <p id="output2"></p>
+      <button onclick="showResult()">Multiply</button>
+    </div>
+
+    <script>   
+      function multiply(x) {
+        return function(y) {
+          return x * y;
+        };
+      }
+      console.log("sN.value" + sN.value);
+      var giveY = multiply(sN.value);  //function(y) {return sN.value * y}
+
+      console.log("giveY " + giveY);
+
+      function showResult() {
+        output2.innerHTML = giveY(fN.value); //return sN.value * fN.value
+      }
+
+      function saySth() {
+        var something = "something";
+        function buildString() {
+          var innerOutput = "innerSomething";
+          output.innerHTML = innerOutput + " " + something;
+        }
+        buildString();
+      }
+    </script>
+  </body>
+</html>

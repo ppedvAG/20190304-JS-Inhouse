@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scopes</title>
+</head>
+<body>
+
+    <script>
+        /* let kann man nicht redeklarieren. nicht mit let, nicht mit var*/
+
+        let l = 5;
+        //let l = 6; //wirft einen Fehler
+        //var l = 6; //wirft einen Fehler
+        l = 6;
+
+
+        /* Var und let global deklariert - kein Unterschied */
+        var x = 2;
+        let y = 3;
+        console.log(x);
+        console.log(y);
+
+
+        /* let Variablen gehören nicht zum window Object. */
+
+        var a = 3;
+        let b = 4;
+        console.log(window.a); //3
+        console.log(window.b); // undefined
+
+        console.log("let innerhalb von geschweiften klammern");
+        let c = 5;
+        {
+            let c = 6;
+            console.log(c);
+        }
+        console.log(c);
+
+
+        console.log("var innerhalb von geschweiften klammern");
+        var t = 5;
+        {
+            var t = 6;
+            console.log(t);
+        }
+        console.log(t);
+
+        
+
+
+        
+    </script>
+    
+</body>
+</html>

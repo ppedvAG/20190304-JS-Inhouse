@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formulare</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Preisabfrage</legend>
+      <label for="preis">Preis:</label>
+      <span id="min">min</span>
+      <input
+        type="range"
+        name="preis"
+        id="preis"
+        value="70"
+        min="30"
+        max="400"
+        step="10"
+        oninput="myFunction()"
+      />
+      <span id="max">max</span>
+      <div id="aktuell">aktuell</div>
+    </fieldset>
+
+    <input type="color" placeholder="color">
+    <input type="date" placeholder="date">
+    <input type="text">
+    <input type="text">
+
+    <script>
+      var mintext = min;
+      var maxtext = max;
+      mintext.innerHTML = preis.min;
+      maxtext.innerHTML = preis.max;
+
+      function myFunction() {
+        aktuell.innerHTML = preis.value;
+      }
+      
+    </script>
+  </body>
+</html>

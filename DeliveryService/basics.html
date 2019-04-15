@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Basics</title>
+  </head>
+  <body>
+    <script>
+      /* HELLO WORLD IN JS */
+
+      /* der Variable myDiv wurde das Objekt div weitergegeben */
+      /* var myDiv = document.querySelector("div"); */
+      /* Property textContent vom Objekt div hat jetzt den Inhalt "Hello world" */
+      /* myDiv.textContent = "Hello world!"; */
+
+      /* MEHRERE VARIABLEN IN EINER ZEILE DEKLARIEREN */
+      var x = (y = 4);
+      console.log("x = " + x + " y = " + y);
+      /* Weitere Informationen kommen */
+
+      /* STRINGS ZUSAMMENFÜHREN MIT DEM OPERATOR + */
+      /* Zwei Schreibweisen für Strings " " und ' ' für den Fall, 
+      wenn sie verschachtelt werden sollen */
+      var fname = "Max",
+        lname = "Mustermann",
+        name;
+      name = fname + " " + lname; //Operator + fügt die Strings zusammen zu einem String
+      console.log(name);
+
+      /* EINE NUMBER VAR MIT EINER STRING VAR VERGLEICHEN UND DIE BEIDEN ADDIEREN */
+      var a = 4;
+      var b = "4";
+      var istGleich = false;
+      if (a === b) {
+        console.log("a und b sind gleich");
+      }
+      var c = a + b;
+      console.log("c ist gleich: " + c + "typ von c ist: " + typeof c);
+
+      /* IF ANWEISUNG KÜRZER SCHREIBEN  */
+      a == 4 ? console.log(true) : console.log(false);
+
+      //Arrays können Konstante sein, Elemente dürfen aber geändert werden
+      /* console.log(angebot); */
+
+      /* angebot[1] = ; */
+      /* console.log(angebot); */
+    </script>
+  </body>
+</html>
